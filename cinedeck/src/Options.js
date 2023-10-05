@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 function Options({ onSetMovies }) {
     const [id, setId] = useState('');
     const API_KEY = '96706b0f33b454df6da0561912cd7362'

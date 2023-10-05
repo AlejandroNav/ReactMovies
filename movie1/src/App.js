@@ -1,15 +1,16 @@
 
 import './App.css';
-
+import Button from './Button';
+import Game from './Game';
+import Rando from './Rando';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          My react App
-        </h1>
-      </header>
+     <Rando maxNum={28} />
+      <Game />
+      <Button />
     </div>
+   
   );
 }
 
