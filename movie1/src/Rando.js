@@ -10,7 +10,7 @@ class Rando extends Component {
         setInterval(() => {
             let rand = Math.random() * this.props.maxNum
             this.setState({ num: rand })
-        }, 1000);
+        }, 2000);
     }
     render() {
         return <h1>{this.state.num}</h1>
