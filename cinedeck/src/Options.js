@@ -24,23 +24,25 @@ function Options({ onSetMovies }) {
                 onSetMovies([]);
             });
     }
+
+    
+// REGRSEA LAS PELICULAS MAS POPULARES DEL API
+
     function fetchPopularMovies() {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error al obtener las películas populares');
-                }
+                if (!response.ok) {throw new Error('Error finding popular movies');}
                 return response.json();
             })
             .then(data => {
-                const movies = data.results.slice(0, 10).map(movie => ({
+                const movies = data.results.map(movie => ({
                     title: movie.title,
                     date: movie.release_date
                 }));
                 onSetMovies(movies);
             })
             .catch(error => {
-                console.error("Hubo un error al buscar las películas populares:", error);
+                console.error("Error finding popular movies", error);
                 onSetMovies([]);
             });
     }

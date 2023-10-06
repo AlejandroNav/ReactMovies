@@ -6,7 +6,9 @@ import Options from './Options';
 //App está actuando como el controlador central de los datos, y está pasando funciones
 // y estados a sus componentes hijos para que puedan interactuar entre ellos.
 function App() {
-  const [movies, setMovies] = useState([{ title: 'Vertigo', date: '1958' }, { title: 'Batman', date: '1999' }]);
+  const [movies, setMovies] = useState([]);
+
+  const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <div className="App" >
@@ -17,7 +19,7 @@ function App() {
         <Options onSetMovies={setMovies} />
       </section>
       <main className="App-main" >
-        <Movies titles={movies} />
+        <Movies titles={movies} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       </main>
     </div>
   );
