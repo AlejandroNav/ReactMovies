@@ -2,7 +2,7 @@
     color: rgb(198, 198, 252);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .pagination {
