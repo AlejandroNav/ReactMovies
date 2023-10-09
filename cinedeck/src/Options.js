@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Options.css'
 
 function Options({ onSetMovies }) {
     const [movieName, setMovieName] = useState('');
@@ -15,7 +16,7 @@ function Options({ onSetMovies }) {
         { id: 10749, name: 'Romance' }
     ];
 
-    
+
     function discoverMoviesByGenre() {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${selectedGenre}`)
             .then(response => {
@@ -28,7 +29,7 @@ function Options({ onSetMovies }) {
                 const movies = data.results.map(movie => ({
                     title: movie.title,
                     date: movie.release_date,
-                    poster : movie.poster_path,
+                    poster: movie.poster_path,
                     stars: movie.vote_average
                 }));
                 onSetMovies(movies);
@@ -50,7 +51,7 @@ function Options({ onSetMovies }) {
                 const movies = data.results.map(movie => ({
                     title: movie.title,
                     date: movie.release_date,
-                    poster : movie.poster_path,
+                    poster: movie.poster_path,
                     stars: movie.vote_average
                 }));
                 onSetMovies(movies);
@@ -73,7 +74,7 @@ function Options({ onSetMovies }) {
                 const movies = data.results.map(movie => ({
                     title: movie.title,
                     date: movie.release_date,
-                    poster : movie.poster_path,
+                    poster: movie.poster_path,
                     stars: movie.vote_average
                 }));
                 onSetMovies(movies);
@@ -97,7 +98,7 @@ function Options({ onSetMovies }) {
                 const movies = data.results.map(movie => ({
                     title: movie.title,
                     date: movie.release_date,
-                    poster : movie.poster_path,
+                    poster: movie.poster_path,
                     stars: movie.vote_average
                 }));
                 onSetMovies(movies);
@@ -111,17 +112,19 @@ function Options({ onSetMovies }) {
 
     // ------------ RETURN -------------
     return (
-        <div>
-            <button onClick={fetchPopularMovies}>Traer 10 películas populares</button>
-
+        <article>
+            <div>
+                
             <input
+                id="byName"
                 type='text'
                 placeholder="Ingresa el Nombre de la película"
                 value={movieName}
                 onChange={e => setMovieName(e.target.value)}
             />
-            <button onClick={findMovieByName}>Buscar por Nombre</button>
-
+            <button  onClick={findMovieByName}>Buscar por Nombre</button>
+            </div>
+            <div>
             <input
                 type='text'
                 placeholder="Ingresa el año de lanzamiento"
@@ -129,7 +132,8 @@ function Options({ onSetMovies }) {
                 onChange={e => setReleaseYear(e.target.value)}
             />
             <button onClick={discoverMoviesByYear}>Descubrir por año</button>
-
+            </div>
+            <div>
             <select
                 value={selectedGenre}
                 onChange={e => setSelectedGenre(e.target.value)}
@@ -141,8 +145,13 @@ function Options({ onSetMovies }) {
                     </option>
                 ))}
             </select>
-            <button onClick={discoverMoviesByGenre}>Descubrir por género</button>
-        </div>
+            <button type='button' class="btn btn-info" onClick={discoverMoviesByGenre}>Descubrir por género</button>
+            </div>
+            <div>
+                <p></p>
+            <button type='button' class="btn-6" onClick={fetchPopularMovies}>Traer 10 películas populares</button>
+            </div>
+        </article>
     );
 }
 

@@ -1,0 +1,47 @@
+
+section button,input,select{
+    background: transparent;
+    color: inherit;
+    outline: none;
+    border: 4PX rgb(51, 66, 186) SOLID;
+    transition: background-color 0.4s;
+    font-size: 1rem;
+    margin: 5px;
+    padding : 10px 15px;
+    border-radius: 0px;
+    appearance: none;
+    text-align: center;
+    box-shadow: none;
+    width: 30%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+section input{
+    background: rgb(45, 45, 109);
+    width: 60%;
+    text-align: left;
+    
+    border-radius: 25px;
+}
+section select{
+    background: rgb(82, 82, 198);
+    width: 64.4%;
+    text-align: left;
+}
+
+section article{
+    width: 50%;
+    
+}
+section button{
+    background-color:rgb(51, 66, 186) ;
+    box-shadow: 0 0 5px #8ce436;
+}
+
+section  button:hover {
+    background-color:transparent ;
+}
+section div{
+    display: flex;
+    justify-content: space-between;
+}
