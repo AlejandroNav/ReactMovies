@@ -1,14 +1,10 @@
 .App {
   text-align: center;
+  font-size: 1rem;
 }
 
-.App-header {
-  background-color: #50154d;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  font-size: 1.4rem;
-  color: rgb(255, 56, 56);
+.customDiceIcon {
+  color: rgb(87, 58, 173); 
+  font-size: 6rem;
+  margin:20px
 }
