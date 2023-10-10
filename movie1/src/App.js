@@ -1,18 +1,13 @@
-
+import React from 'react';
+import Dice from './Dice';
 import './App.css';
-import Button from './Button';
-import Game from './Game';
-import Rando from './Rando';
-import BrokenClick from './BrokenClick';
+
 function App() {
   return (
     <div className="App">
-     <Rando maxNum={28} />
-      <Game />
-      <Button />
-      <BrokenClick />
+      <h1>Dice Roller</h1>
+      <Dice />
     </div>
-   
   );
 }
 
