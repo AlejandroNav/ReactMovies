@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <h1>Dice Roller</h1>
       <Dice />
-      <Dice />
     </div>
   );
 }
