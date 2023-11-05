@@ -16,7 +16,7 @@ function Cards(props) {
                     {props.dateMovie.split('-')[0]} {estrellas}
                 </h5>
             </div>
-            <img src={`${baseURL}${props.posterMovie} `}>
+            <img src={`${baseURL}${props.posterMovie}`}>
             </img>
         </div>
     )
